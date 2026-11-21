@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FDSB Landing Page</title>
 <script src="./_runtime/react.js"></script>
 <script src="./_runtime/react-dom.js"></script>
@@ -198,6 +199,12 @@ a.badge:hover{color:#fff;border-color:#EDCB58}
 .scr:has(#t1:checked){--bg:#000000;--cd:#0B0B0D}.scr:has(#t1:checked) label[for=t1]{background:#4C6E27;border-color:var(--ac)}.scr:has(#t1:checked) label[for=t1] .rd{background:var(--ac);border-color:var(--ac);color:#12141F}
 .scr:has(#t2:checked){--bg:#19191C;--cd:#242428}.scr:has(#t2:checked) label[for=t2]{background:#4C6E27;border-color:var(--ac)}.scr:has(#t2:checked) label[for=t2] .rd{background:var(--ac);border-color:var(--ac);color:#12141F}
 .scr:has(#t3:checked){--bg:#0D1B2E;--cd:#15263D}.scr:has(#t3:checked) label[for=t3]{background:#4C6E27;border-color:var(--ac)}.scr:has(#t3:checked) label[for=t3] .rd{background:var(--ac);border-color:var(--ac);color:#12141F}
+
+/* Responsive viewport and accessible footer targets */
+.ft{padding:32px 24px calc(40px + env(safe-area-inset-bottom))!important}
+.fl2{gap:10px 16px!important;margin-bottom:14px!important}
+.ft .fl2 a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 12px;border-radius:8px;position:relative;z-index:51;touch-action:manipulation}
+@media(max-width:640px){.ft{padding:24px 14px calc(44px + env(safe-area-inset-bottom))!important}.fl2{gap:8px!important}.ft .fl2 a{min-height:48px;padding:0 10px}}
 </style>
 </helmet>
 <div class="root">
