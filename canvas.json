@@ -1,0 +1,28 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 6900,
+      "title": "FDSB Landing Page",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "FAQ.dc.html",
+      "x": 1360,
+      "y": 0,
+      "w": 1280,
+      "h": 2900,
+      "title": "FAQ",
+      "expand": "fill",
+      "is_interactive": true
+    }
+  ],
+  "launch": {
+    "view": "focused",
+    "file": "Main.dc.html"
+  }
+}

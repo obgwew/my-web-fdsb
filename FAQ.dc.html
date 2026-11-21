@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FDSB FAQ</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&amp;family=Noto+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#12141F}a:hover{color:#3F72A0}
+.root{font-family:'Rubik',system-ui,sans-serif;color:#12141F;background:#12141F;overflow:clip}
+.root:has(#lar:checked){direction:rtl}
+.root:has(#lar:checked) .en,.root:not(:has(#lar:checked)) .ar{display:none}
+.tg{position:absolute;opacity:0;width:1px;height:1px}
+.nv{position:sticky;top:0;z-index:50;background:rgba(18,20,31,.9);color:#fff;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nvi{max-width:1200px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:12px;box-sizing:border-box}
+.wm{font-size:26px;font-weight:700;letter-spacing:1px}
+.sp{flex:1}
+.nl{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:inherit;font-weight:500;text-decoration:none}
+.nl:hover{color:#EDCB58}
+.seg{position:relative;display:inline-flex;direction:ltr;padding:4px;border-radius:999px;background:#12141F;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+.th{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:#EDCB58;transition:transform .4s cubic-bezier(.3,1.5,.5,1)}
+.root:has(#lar:checked) .th{transform:translateX(100%)}
+.lb{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;min-width:64px;min-height:40px;padding:0 14px;border-radius:999px;font-weight:700;font-size:16px;cursor:pointer;color:#fff;box-sizing:border-box;transition:color .3s}
+.root:has(#len:checked) label[for=len],.root:has(#lar:checked) label[for=lar]{color:#12141F}
+.root:has(#len:focus-visible) .seg,.root:has(#lar:focus-visible) .seg{outline:3px solid #EDCB58;outline-offset:3px}
+.ghb{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:#12141F;color:#fff;text-decoration:none;font-weight:500;border:1px solid rgba(255,255,255,.22)}
+.ghb:hover{color:#EDCB58}
+.pb{position:absolute;left:0;right:0;bottom:0;height:3px;background:#EDCB58;transform-origin:0 50%;transform:scaleX(0)}
+.root:has(#lar:checked) .pb{transform-origin:100% 50%}
+.hero{position:relative;overflow:hidden;background:#7388D8;border-radius:0 0 48px 48px}
+.sh{position:absolute;pointer-events:none}
+.pill{height:48px;border-radius:24px;transform:rotate(-45deg)}
+.hw{position:relative;max-width:1200px;margin:0 auto;padding:56px 24px 80px;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:56px}
+.tag{display:inline-block;padding:6px 16px;border-radius:20px;background:#EDCB58;color:#12141F;font-size:15px;font-weight:500}
+h1{margin:20px 0 0;font-size:clamp(36px,6.4vw,66px);line-height:1.1;font-weight:700;color:#12141F}
+.lead{margin:18px 0 0;font-size:19px;line-height:1.65}
+.cta{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 26px;border-radius:16px;font-weight:700;font-size:18px;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.cta:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(18,20,31,.3)}
+.c1{background:#12141F;color:#fff}.c1:hover{color:#fff}
+.c2{background:#EDCB58;color:#12141F}.c2:hover{color:#12141F}
+.dk{background:#12141F;color:#E8EBF8}
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.big{margin:0;font-size:clamp(30px,4.4vw,50px);line-height:1.14;font-weight:700;color:#fff}
+.big b{color:#EDCB58}
+.dk .lead{color:#C5CBE6}
+.num{font:700 20px ui-monospace,Menlo,monospace;color:#EDCB58;margin-bottom:12px}
+.hint{display:inline-block;margin-top:18px;padding:6px 14px;border-radius:20px;border:1px dashed rgba(237,203,88,.6);color:#EDCB58;font-size:15px}
+.demo{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:28px;margin-top:48px;text-align:left}
+.win{direction:ltr;flex:1 1 440px;max-width:640px;border-radius:20px;background:#1C1F33;border:1px solid #2B2F4A;box-shadow:0 0 90px rgba(115,136,216,.28);overflow:hidden}
+.wh{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid #2B2F4A;color:#AEB6DC;font:15px ui-monospace,Menlo,monospace}
+.wh i{width:12px;height:12px;border-radius:6px;background:#EF6C7F}.wh i+i{background:#EDCB58}.wh i+i+i{background:#3DBE8B}
+.wh em{margin-left:auto;font-style:normal;color:#7388D8}
+.cb{padding:18px 8px 22px;font:clamp(13px,2.3vw,18px)/1.85 ui-monospace,Menlo,monospace;overflow-x:auto}
+.ln{display:flex;gap:18px;white-space:pre;color:#E8EBF8}
+.ln i{width:34px;text-align:right;font-style:normal;color:#4E7D6C;flex:none}
+.f{color:#4A9BE6}.k{color:#EDCB58}.b{color:#EF4D58}.n{color:#3DBE8B}.d{color:#6B7399}
+s{text-decoration:none}
+.cur{display:inline-block;width:10px;height:1.1em;background:#EDCB58;vertical-align:text-bottom;animation:bl 1s steps(1) infinite}
+.chat{direction:ltr;flex:1 1 280px;max-width:380px;border-radius:20px;background:#2B2D31;border:1px solid #3A3D44;padding:20px;display:flex;flex-direction:column;gap:18px;color:#DCDEE3;font:16px/1.45 'Noto Sans',system-ui,sans-serif}
+.msg{display:flex;gap:12px}.msg .ava{flex:none;width:40px;height:40px;border-radius:50%;background:#7388D8;color:#12141F;display:flex;align-items:center;justify-content:center;font-weight:700}
+.msg b{color:#fff}.bot2{margin-left:6px;padding:1px 6px;border-radius:5px;background:#7388D8;color:#12141F;font-size:11px;font-weight:700}
+.rx{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:3px 10px;border-radius:8px;background:rgba(115,136,216,.22);border:1px solid #7388D8;font-size:14px}
+.sc{padding:104px 0 24px}
+.row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:56px;margin-top:88px}
+.row:first-child{margin-top:56px}
+.r2{flex-direction:row-reverse}
+.rt2{flex:1 1 300px;max-width:500px}
+.phn{position:relative;flex:none;width:320px;padding:8px;border-radius:44px;background:#0A0B10;box-shadow:inset 0 0 0 2px #3A3D4A,0 30px 60px rgba(0,0,0,.5);transition:transform .5s}
+.phn:hover{transform:perspective(900px) rotateY(-8deg) rotateX(3deg) scale(1.03)}
+.phn::before{content:"";position:absolute;top:8px;left:50%;width:92px;height:22px;margin-left:-46px;border-radius:0 0 14px 14px;background:#0A0B10;z-index:4}
+.scr{--bg:#12141F;--cd:#1C1F33;--bd:#2B2F4A;--mu:#8F97C6;--ac:#7388D8;position:relative;height:590px;overflow:hidden;border-radius:36px;background:var(--bg);color:#E8EBF8;font:700 12.5px/1.3 'Noto Sans',system-ui,sans-serif;padding:34px 14px 0;box-sizing:border-box;direction:ltr;text-align:left}
+.scr.sm{height:430px}
+.scr::after{content:"";position:absolute;left:0;right:0;bottom:0;height:50px;background:linear-gradient(transparent,var(--bg));pointer-events:none;z-index:1}
+.scr .tg{z-index:0}
+.cd{background:var(--cd);border:1px solid var(--bd);border-radius:14px}
+.mu{color:var(--mu)}
+.hd{display:flex;align-items:flex-start;justify-content:space-between}
+.blu{color:#4A90D9;font-size:24px;line-height:1.15}
+.bot{display:flex;align-items:center;gap:10px;padding:10px 12px;margin-top:14px;font-size:14px;transition:transform .25s}.bot:hover{transform:translateY(-2px)}
+.av{flex:none;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#2F2F66;box-shadow:0 0 0 2px var(--ac)}
+.go{margin-left:auto;width:34px;height:34px;border-radius:50%;background:#4A90D9;color:#12141F;display:flex;align-items:center;justify-content:center}
+.bk{width:38px;height:38px;border-radius:12px;background:var(--ac);color:#12141F;display:flex;align-items:center;justify-content:center;flex:none}
+.tb{margin:-34px -14px 0;padding:36px 14px 8px;background:var(--cd);border-bottom:1px solid var(--bd)}
+.ex{width:26px;height:26px;border-radius:50%;background:var(--cd);border:1px solid var(--bd);color:#EDCB58;display:flex;align-items:center;justify-content:center;font-size:13px;margin-top:10px}
+.avl{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:-4px;font-size:18px}
+.stop{display:flex;align-items:center;justify-content:center;height:46px;border-radius:12px;background:#EF6C7F;color:#fff;font-size:15px;margin-top:14px;cursor:pointer;transition:background .3s}
+.scr:has(#bt:checked) .stop{background:#3DBE8B}
+.off{display:none}.on,.off{align-items:center}.on{display:inline-flex}
+.scr:has(#bt:checked) .on{display:none}.scr:has(#bt:checked) .off{display:inline-flex}
+.scr:has(#bt:checked) b.grn{color:#8F97C6!important}.scr:has(#bt:checked) .dt{background:#6B7399;animation:none}
+.two{display:flex;gap:10px;margin-top:10px}.two>*{flex:1}
+.btn{display:flex;align-items:center;gap:8px;padding:8px 10px;font-size:12.5px}
+.tl{width:28px;height:28px;border-radius:8px;background:var(--bg);color:var(--ac);display:inline-flex;align-items:center;justify-content:center;flex:none;font-size:10px}
+.st{padding:12px;display:flex;flex-direction:column;gap:6px;font-size:11px;color:var(--mu)}.st b{font-size:13px;color:#fff}
+.grn{color:#3DBE8B!important}
+.dt{width:8px;height:8px;border-radius:50%;background:#3DBE8B;margin-left:8px;animation:pu 1.6s ease-in-out infinite}
+.rw{display:flex;align-items:center;gap:10px}
+.nt{padding:14px;font-size:12px;line-height:1.5;color:var(--mu);margin-top:8px}
+.scr hr{border:0;border-top:1px solid var(--bd);margin:12px 0}
+.lab{font-size:11.5px;color:var(--mu);margin:12px 2px 6px}
+.fld{position:relative;margin:10px;padding:13px 12px 7px;border:1px solid var(--bd);border-radius:10px;font-size:13.5px;background:var(--cd)}
+.fld small{position:absolute;top:-7px;left:10px;padding:0 4px;background:inherit;font-size:9.5px;color:var(--mu)}
+.dd{display:flex;align-items:center;gap:8px;padding:11px 12px;color:var(--mu)}.dd .cv{margin-left:auto}
+.cnt{display:flex;justify-content:flex-end;gap:12px;padding:6px 10px;font-size:10px;color:var(--mu);border-bottom:1px solid var(--bd)}.cnt b{color:#fff}
+.cdb{padding:10px 6px;font:11.5px/1.75 ui-monospace,Menlo,monospace;overflow:hidden}
+.cl{display:flex;gap:10px;white-space:pre;font-weight:500}.cl i{width:18px;text-align:right;font-style:normal;color:#2F8F6A;flex:none}
+.svp{position:absolute;z-index:2;right:14px;bottom:18px;display:flex;align-items:center;gap:8px;padding:0 20px;height:42px;border-radius:21px;background:#3DBE8B;color:#fff;font-size:14px;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.sec{display:flex;align-items:center;gap:8px;font-size:13px;margin:14px 0 8px;color:#fff}.sec svg{color:var(--ac)}
+.lg2{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;font-size:13px}
+.lpill{display:flex;align-items:center;gap:8px;padding:5px 8px;border:1px solid var(--bd);border-radius:12px;background:var(--bg)}
+.en2{background:#4C6E27;border-radius:6px;padding:1px 6px;font-size:10px;color:#9BE05A}
+.tr{display:flex;align-items:center;gap:10px;padding:7px 8px;border:1px solid transparent;border-radius:12px;margin-top:6px;cursor:pointer;font-size:13px}
+.sw{display:flex;width:50px;height:26px;border-radius:8px;overflow:hidden;flex:none}.sw i{flex:1}
+.rd{margin-left:auto;width:20px;height:20px;border-radius:50%;border:2px solid var(--bd);color:transparent;display:flex;align-items:center;justify-content:center}
+.cs{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+.cc{width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#12141F;cursor:pointer}
+.cc svg{display:none}
+.an{display:none}
+.tgl{flex:none;width:46px;height:26px;border-radius:13px;background:#2B2F4A;position:relative}.tgl::after{content:"";position:absolute;top:4px;left:4px;width:18px;height:18px;border-radius:50%;background:#8F97C6}
+.wk{display:flex;align-items:center;gap:8px}.srch{flex:1;padding:9px 10px;border:1px solid var(--bd);border-radius:10px;background:var(--cd);color:var(--mu);font-size:12px}
+.fn{padding:12px;margin-top:10px}.fn h5{display:flex;align-items:center;gap:8px;margin:0;font-size:13px}.chip{background:#5E6578;border-radius:6px;padding:2px 7px;font-size:9.5px;color:#fff}
+.fn p{margin:8px 0;font-size:11.5px;line-height:1.5;color:var(--mu)}
+.bs{display:flex;gap:8px}.bb{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:9px;background:var(--ac);color:#fff;font-size:11px}
+.fab{position:absolute;z-index:2;right:14px;bottom:18px;width:40px;height:40px;border-radius:12px;background:var(--ac);color:#fff;display:flex;align-items:center;justify-content:center}
+.dlw{padding:104px 0 80px;background:radial-gradient(700px 420px at 50% 0,rgba(115,136,216,.28),transparent),#12141F;text-align:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:880px;margin:48px auto 0;text-align:start}
+.card{position:relative;overflow:hidden;padding:28px;border-radius:26px;background:#181B2E;border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:12px;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(237,203,88,.6)}
+.badge{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;min-height:60px;padding:0 24px;border-radius:16px;background:#000;color:#fff;text-decoration:none;margin-bottom:8px;border:1px solid rgba(255,255,255,.2)}
+a.badge:hover{color:#fff;border-color:#EDCB58}
+.bt{display:flex;flex-direction:column;line-height:1.15;text-align:start}
+.bt small{font-size:12px;letter-spacing:1px}.bt b{font-size:24px}
+.rowd{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#fff;text-decoration:none;transition:background .25s,border-color .25s,transform .25s}
+.rowd:hover{background:rgba(237,203,88,.12);border-color:#EDCB58;color:#fff;transform:translateY(-2px)}
+.ic{flex:none;width:44px;height:44px;border-radius:12px;background:rgba(237,203,88,.14);color:#EDCB58;display:flex;align-items:center;justify-content:center}
+.rowd .rt{display:block;flex:1;text-align:start}.rowd b{display:block;font-size:18px}.rowd small{color:#AEB6DC;font-size:14px}
+.go2{color:#EDCB58;transition:translate .25s;display:flex}.rowd:hover .go2{translate:4px 0}
+.root:has(#lar:checked) .go2 svg{transform:scaleX(-1)}
+.soon{position:relative;overflow:hidden;display:flex;align-items:center;gap:14px;padding:18px 16px;border-radius:16px;border:1px dashed rgba(255,255,255,.25);color:#E8EBF8}
+.soon::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.1) 50%,transparent 70%);transform:translateX(-100%);animation:sh 3s ease-in-out infinite}
+.soon b{display:block;font-size:18px}.soon small{color:#AEB6DC;font-size:14px}
+.dot{flex:none;width:12px;height:12px;border-radius:6px;background:#EDCB58;animation:pu 1.6s ease-in-out infinite}
+.ft{background:#0B0C14;color:#B8BED9;padding:32px 24px;text-align:center;font-size:15px;line-height:1.8}
+.ft a{color:#EDCB58}
+.fl2{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px;margin-bottom:10px;font-size:16px}
+.qa{border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);margin-top:12px;transition:border-color .25s,background .25s}
+.qa[open]{border-color:rgba(237,203,88,.6);background:rgba(237,203,88,.06)}
+.qa summary{display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;list-style:none;font-size:18px;font-weight:500;color:#fff;min-height:44px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary svg{flex:none;margin-inline-start:auto;color:#EDCB58;transition:rotate .3s}
+.qa[open] summary svg{rotate:45deg}
+.qa p{margin:0;padding:0 20px 20px;color:#C5CBE6;font-size:17px;line-height:1.7;animation:up .4s both}
+.qa p a{color:#EDCB58}
+.cat{margin-top:56px}.cat:first-child{margin-top:0}
+.cat h2{margin:0 0 6px;font-size:26px;color:#fff;display:flex;gap:12px;align-items:baseline}.cat h2 span{font:700 18px ui-monospace,Menlo,monospace;color:#EDCB58}
+@keyframes bl{50%{opacity:0}}
+@keyframes sh{to{transform:translateX(100%)}}
+@keyframes pu{50%{transform:scale(1.6);opacity:.5}}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes fl{50%{transform:translateY(-16px)}}
+@keyframes dr{50%{transform:translate(20px,-14px) rotate(10deg)}}
+@keyframes pop{from{opacity:0;transform:translateY(70px) scale(.93);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes lin{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+@keyframes pxu{to{translate:0 -160px}}
+@keyframes pxd{to{translate:0 120px}}
+@keyframes pg{to{transform:scaleX(1)}}
+@keyframes nvbg{from{background:#7388D8;color:#12141F;box-shadow:none}to{background:rgba(18,20,31,.9);color:#fff;box-shadow:0 8px 30px rgba(0,0,0,.4)}}
+.hi>*{animation:up .8s both}.hi>*:nth-child(2){animation-delay:.12s}.hi>*:nth-child(3){animation-delay:.24s}.hi>*:nth-child(4){animation-delay:.36s}
+.fl{animation:fl 6s ease-in-out infinite}
+.dr{animation:dr 9s ease-in-out infinite}
+@supports (animation-timeline:view()){
+.rv{animation:pop linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+.ln,.cl{animation:lin linear both;animation-timeline:view();animation-range:entry 0% entry 100%}
+.nv{animation:nvbg linear both;animation-timeline:scroll();animation-range:0 260px}
+.pb{animation:pg linear both;animation-timeline:scroll()}
+.px{animation:pxu linear both;animation-timeline:scroll();animation-range:0 800px}
+.py{animation:pxd linear both;animation-timeline:scroll();animation-range:0 800px}
+}
+@media (max-width:640px){.ghb,.nl{display:none}.wm{font-size:22px}.hw{padding-top:40px;gap:40px}.row{gap:36px;margin-top:64px}.dlw,.sc{padding-top:72px}.card{padding:20px}.nvi{padding:8px 14px;gap:8px}}
+@media (max-width:380px){.phn{zoom:.88}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.scr:has(#a0:checked){--ac:#7388D8}.scr:has(#a0:checked) label[for=a0]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px #fff}.scr:has(#a0:checked) label[for=a0] svg{display:block}.scr:has(#a0:checked) .a0n{display:inline}
+.scr:has(#a1:checked){--ac:#4A90D9}.scr:has(#a1:checked) label[for=a1]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px #fff}.scr:has(#a1:checked) label[for=a1] svg{display:block}.scr:has(#a1:checked) .a1n{display:inline}
+.scr:has(#a2:checked){--ac:#22D3EE}.scr:has(#a2:checked) label[for=a2]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px #fff}.scr:has(#a2:checked) label[for=a2] svg{display:block}.scr:has(#a2:checked) .a2n{display:inline}
+.scr:has(#a3:checked){--ac:#2DD4A0}.scr:has(#a3:checked) label[for=a3]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px #fff}.scr:has(#a3:checked) label[for=a3] svg{display:block}.scr:has(#a3:checked) .a3n{display:inline}
+.scr:has(#a4:checked){--ac:#EDCB58}.scr:has(#a4:checked) label[for=a4]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px #fff}.scr:has(#a4:checked) label[for=a4] svg{display:block}.scr:has(#a4:checked) .a4n{display:inline}
+.scr:has(#a5:checked){--ac:#C9A227}.scr:has(#a5:checked) label[for=a5]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px #fff}.scr:has(#a5:checked) label[for=a5] svg{display:block}.scr:has(#a5:checked) .a5n{display:inline}
+.scr:has(#a6:checked){--ac:#FF6B3D}.scr:has(#a6:checked) label[for=a6]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px #fff}.scr:has(#a6:checked) label[for=a6] svg{display:block}.scr:has(#a6:checked) .a6n{display:inline}
+.scr:has(#a7:checked){--ac:#8B5CF6}.scr:has(#a7:checked) label[for=a7]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px #fff}.scr:has(#a7:checked) label[for=a7] svg{display:block}.scr:has(#a7:checked) .a7n{display:inline}
+.scr:has(#t0:checked){--bg:#12141F;--cd:#1C1F33}.scr:has(#t0:checked) label[for=t0]{background:#4C6E27;border-color:var(--ac)}.scr:has(#t0:checked) label[for=t0] .rd{background:var(--ac);border-color:var(--ac);color:#12141F}
+.scr:has(#t1:checked){--bg:#000000;--cd:#0B0B0D}.scr:has(#t1:checked) label[for=t1]{background:#4C6E27;border-color:var(--ac)}.scr:has(#t1:checked) label[for=t1] .rd{background:var(--ac);border-color:var(--ac);color:#12141F}
+.scr:has(#t2:checked){--bg:#19191C;--cd:#242428}.scr:has(#t2:checked) label[for=t2]{background:#4C6E27;border-color:var(--ac)}.scr:has(#t2:checked) label[for=t2] .rd{background:var(--ac);border-color:var(--ac);color:#12141F}
+.scr:has(#t3:checked){--bg:#0D1B2E;--cd:#15263D}.scr:has(#t3:checked) label[for=t3]{background:#4C6E27;border-color:var(--ac)}.scr:has(#t3:checked) label[for=t3] .rd{background:var(--ac);border-color:var(--ac);color:#12141F}
+</style>
+</helmet>
+<div class="root">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="gh" viewBox="0 0 24 24"><path fill="#fff" stroke="none" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"></path></symbol><symbol id="lg" viewBox="60 270 960 600"><polygon points="80,545 373,357 373,467 193,573 373,668 373,778 80,610" fill="#3F9AB0"></polygon><polygon points="570,289 669,289 606,516 482,601" fill="#4A90D9"></polygon><polygon points="482,601 606,516 511,855 411,855" fill="#EDCB58"></polygon><polygon points="700,357 995,545 995,610 700,778 700,668 882,573 700,467" fill="#EDCB58"></polygon></symbol><symbol id="ar" viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"></path></symbol><symbol id="gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path></symbol><symbol id="play" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M7 4l13 8-13 8z"></path></symbol><symbol id="ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></symbol><symbol id="ver" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="currentColor" stroke="none"></circle><path stroke="#1C1F33" d="M8 12.3l2.7 2.7L16 9.5"></path></symbol><symbol id="srv" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="7" rx="2"></rect><rect x="4" y="13" width="16" height="7" rx="2"></rect><path d="M8 7.5h.01M8 16.5h.01"></path></symbol><symbol id="usr" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.4"></circle><path d="M16 14.2A5 5 0 0 1 21 19"></path></symbol><symbol id="rf" viewBox="0 0 24 24"><path d="M20 11A8 8 0 0 0 5.6 7M4 4v4h4M4 13a8 8 0 0 0 14.4 4M20 20v-4h-4"></path></symbol><symbol id="fo" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></symbol><symbol id="cv" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></symbol><symbol id="bk" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM8 7h7M8 11h7"></path></symbol><symbol id="flt" viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"></path></symbol><symbol id="mn" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></symbol><symbol id="dash" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="10" rx="1.5"></rect><rect x="13" y="3" width="8" height="6" rx="1.5"></rect><rect x="13" y="11" width="8" height="10" rx="1.5"></rect><rect x="3" y="15" width="8" height="6" rx="1.5"></rect></symbol><symbol id="inf" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></symbol><symbol id="sv" viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5zM8 4v5h7V4M8 20v-6h8v6"></path></symbol><symbol id="ck" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"></path></symbol><symbol id="sl" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 5v4M8 15v4"></path></symbol><symbol id="pal" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 10h.01M12 7.5h.01M15.5 10h.01"></path></symbol><symbol id="dl" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 20h14"></path></symbol><symbol id="mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 7 9-7"></path></symbol><symbol id="help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"></path></symbol><symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></symbol><symbol id="bug" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></symbol><symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></symbol><symbol id="win" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M2 4.6 10.5 3.4v8H2zM11.7 3.2 22 1.7v9.7H11.7zM2 12.6h8.5v8L2 19.4zM11.7 12.6H22v9.7l-10.3-1.4z"></path></symbol><symbol id="and" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M7 9h10v8a1 1 0 0 1-1 1h-1v3a1.2 1.2 0 0 1-2.4 0v-3h-1.2v3A1.2 1.2 0 0 1 9 21v-3H8a1 1 0 0 1-1-1zM3.7 9.5a1.2 1.2 0 0 1 2.4 0v5a1.2 1.2 0 0 1-2.4 0zm14.2 0a1.2 1.2 0 0 1 2.4 0v5a1.2 1.2 0 0 1-2.4 0zM7.2 8a4.8 4.8 0 0 1 9.6 0z"></path></symbol></svg>
+<input class="tg" type="radio" name="lang" id="len" checked="" aria-label="English"><input class="tg" type="radio" name="lang" id="lar" aria-label="العربية">
+<header class="nv"><div class="nvi"><a href="Main.dc.html" style="display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none"><svg role="img" aria-label="FDSB" width="52" height="34" viewBox="60 270 960 600"><polygon points="80,545 373,357 373,467 193,573 373,668 373,778 80,610" fill="#3F72A0"></polygon><polygon points="292,732 373,676 373,778" fill="#EDCB58"></polygon><polygon points="570,289 669,289 606,516 482,601" fill="#3F72A0"></polygon><polygon points="482,601 606,516 511,855 411,855" fill="#EDCB58"></polygon><polygon points="700,357 995,545 995,610 700,778 700,668 882,573 700,467" fill="#EDCB58"></polygon><polygon points="700,357 772,402 700,450" fill="#3F72A0"></polygon></svg><span class="wm">FDSB</span></a><span class="sp"></span><a class="nl" href="Main.dc.html" style="display:inline-flex"><span class="en">← Home</span><span class="ar">← الرئيسية</span></a><div class="seg" role="group" aria-label="Language / اللغة"><span class="th"></span><label class="lb" for="len">EN</label><label class="lb" for="lar">عربي</label></div><a class="ghb" href="https://github.com/obgwew/FDSB" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20"><use href="#gh"></use></svg>GitHub</a></div><span class="pb"></span></header>
+<section class="hero">
+<div class="sh pill py" aria-hidden="true" style="top:-30px;right:100px;width:480px;background:#3F72A0"></div>
+<div class="sh pill dr px" aria-hidden="true" style="top:70px;right:-90px;width:300px;background:#EDCB58"></div>
+<div class="sh pill py" aria-hidden="true" style="bottom:-20px;left:-90px;width:280px;background:#3F72A0"></div>
+<div class="hw" style="padding:64px 24px 72px;justify-content:flex-start"><div class="hi" style="max-width:720px">
+<div class="tag">FAQ</div>
+<h1><span class="en">Frequently asked questions</span><span class="ar">الأسئلة الشائعة</span></h1>
+<p class="lead"><span class="en">Quick answers about installing, using and scripting with FDSB.</span><span class="ar">إجابات سريعة عن تثبيت FDSB واستخدامه والبرمجة به.</span></p>
+</div></div>
+</section>
+<section class="dk" style="padding:80px 0 40px"><div class="ctr" style="max-width:860px"><div class="cat rv"><h2><span>01</span><span class="en">Getting started</span><span class="ar">البداية</span></h2><details class="qa"><summary><span class="en">What is FDSB?</span><span class="ar">ما هو FDSB؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">FDSB (Free Design Studio Bot, also known as Bot Creator For Discord – Local) is a free, open-source app for creating and managing Discord bots from your own device.</span><span class="ar">FDSB (اختصار Free Design Studio Bot، ويُعرف أيضاً بـ Bot Creator For Discord – Local) تطبيق مجاني ومفتوح المصدر لإنشاء بوتات ديسكورد وإدارتها من جهازك.</span></p></details><details class="qa"><summary><span class="en">Which platforms are supported?</span><span class="ar">ما المنصات المدعومة؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Windows (EXE) and Android (APK) today. Google Play is coming soon.</span><span class="ar">Windows (ملف EXE) وAndroid (ملف APK) حالياً، وGoogle Play قريباً.</span></p></details><details class="qa"><summary><span class="en">Which Android file should I download?</span><span class="ar">أي ملف Android أحمّل؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Most modern phones use the arm64 build. Choose arm32 only if arm64 does not install on an older phone.</span><span class="ar">معظم الهواتف الحديثة تستخدم نسخة arm64. اختر arm32 فقط إذا لم تُثبّت arm64 على هاتفك القديم.</span></p></details><details class="qa"><summary><span class="en">How do I install the APK?</span><span class="ar">كيف أثبّت ملف APK؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Download the file, open it, and allow installing from that source if Android asks. Then tap Install.</span><span class="ar">حمّل الملف وافتحه، واسمح بالتثبيت من هذا المصدر إذا طلب Android ذلك، ثم اضغط تثبيت.</span></p></details></div><div class="cat rv"><h2><span>02</span><span class="en">Using the app</span><span class="ar">استخدام التطبيق</span></h2><details class="qa"><summary><span class="en">How do I run my bot?</span><span class="ar">كيف أشغّل البوت؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Open your bot, use Verify Token to check its token, use Invite Bot to add it to your server, then start it from its page. Its status and server count appear on the same screen.</span><span class="ar">افتح البوت، واستخدم Verify Token للتحقق من التوكن، ثم Invite Bot لإضافته إلى سيرفرك، وشغّله من صفحته. تظهر حالته وعدد السيرفرات في الشاشة نفسها.</span></p></details><details class="qa"><summary><span class="en">Where do I find the list of functions?</span><span class="ar">أين أجد قائمة الدوال؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">In the Wiki inside the app. Search a function, read what it does, and open its info before you use it.</span><span class="ar">في الويكي داخل التطبيق. ابحث عن الدالة، واقرأ وظيفتها، وافتح معلوماتها قبل استخدامها.</span></p></details><details class="qa"><summary><span class="en">Can I change the language and theme?</span><span class="ar">هل يمكنني تغيير اللغة والسمة؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Yes. Settings lets you pick the language, a theme (Midnight, AMOLED Black, Graphite or Deep Navy) and an accent color.</span><span class="ar">نعم. من الإعدادات تختار اللغة والسمة (Midnight أو AMOLED Black أو Graphite أو Deep Navy) ولون التمييز.</span></p></details></div><div class="cat rv"><h2><span>03</span><span class="en">FDScript</span><span class="ar">FDScript</span></h2><details class="qa"><summary><span class="en">What is FDScript? Do I need to know programming?</span><span class="ar">ما هي FDScript؟ وهل أحتاج خبرة برمجية؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">FDScript is the scripting language built into FDSB. It is designed to be easy: you combine functions such as $sendMessage and $setVar, and the editor helps with syntax highlighting and line numbers.</span><span class="ar">FDScript هي لغة البرمجة المدمجة في FDSB، وهي مصممة لتكون سهلة: تجمع دوالاً مثل $sendMessage و$setVar، ويساعدك المحرر بتلوين الصياغة وترقيم الأسطر.</span></p></details><details class="qa"><summary><span class="en">What are variables and folders?</span><span class="ar">ما المتغيرات والمجلدات؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Variables store values your commands need, such as points. Folders keep your commands and variables organized.</span><span class="ar">المتغيرات تخزّن القيم التي تحتاجها أوامرك، مثل النقاط. والمجلدات تنظّم أوامرك ومتغيراتك.</span></p></details></div><div class="cat rv"><h2><span>04</span><span class="en">Privacy, license and safety</span><span class="ar">الخصوصية والترخيص والأمان</span></h2><details class="qa"><summary><span class="en">Is FDSB really free and open source?</span><span class="ar">هل FDSB مجاني ومفتوح المصدر فعلاً؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Yes. FDSB is released under AGPL-3.0 and its source code is on GitHub.</span><span class="ar">نعم. FDSB منشور بترخيص AGPL-3.0 وشيفرته المصدرية على GitHub.</span></p></details><details class="qa"><summary><span class="en">What data does FDSB collect?</span><span class="ar">ما البيانات التي يجمعها FDSB؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Please read the <a href="https://obgwew.github.io/FDSB/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> for the full details.</span><span class="ar">يرجى قراءة <a href="https://obgwew.github.io/FDSB/privacy-policy.html" target="_blank" rel="noopener">سياسة الخصوصية</a> للتفاصيل الكاملة.</span></p></details><details class="qa"><summary><span class="en">How do I keep my bot token safe?</span><span class="ar">كيف أحمي توكن البوت؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Never share it publicly or upload it to GitHub. If it leaks, reset it in the Discord Developer Portal and update it in FDSB.</span><span class="ar">لا تشاركه علناً ولا ترفعه إلى GitHub. وإذا تسرّب فأعد تعيينه من Discord Developer Portal ثم حدّثه في FDSB.</span></p></details></div><div class="cat rv"><h2><span>05</span><span class="en">Help and support</span><span class="ar">المساعدة والدعم</span></h2><details class="qa"><summary><span class="en">I found a bug or have an idea.</span><span class="ar">وجدت خطأً أو لدي اقتراح.</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Open an issue on <a href="https://github.com/obgwew/FDSB/issues" target="_blank" rel="noopener">GitHub</a> and describe what happened or what you would like to see.</span><span class="ar">افتح مشكلة (Issue) على <a href="https://github.com/obgwew/FDSB/issues" target="_blank" rel="noopener">GitHub</a> واشرح ما حدث أو ما تقترحه.</span></p></details><details class="qa"><summary><span class="en">How do I contact support?</span><span class="ar">كيف أتواصل مع الدعم؟</span><svg aria-hidden="true" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#plus"></use></svg></summary><p><span class="en">Email <a href="mailto:obgwew@gmail.com">obgwew@gmail.com</a>.</span><span class="ar">راسلنا على <a href="mailto:obgwew@gmail.com">obgwew@gmail.com</a>.</span></p></details></div></div></section>
+<section class="dk" style="padding:56px 0 96px"><div class="ctr" style="text-align:center">
+<h2 class="big rv"><span class="en">Still need <b>help?</b></span><span class="ar">ما زلت تحتاج <b>مساعدة؟</b></span></h2>
+<div class="rv" style="margin-top:32px"><div class="cards" style="max-width:880px"><a class="rowd" href="mailto:obgwew@gmail.com" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#mail"></use></svg></span><span class="rt"><b><span class="en">Email support</span><span class="ar">الدعم عبر البريد</span></b><small><span class="en">obgwew@gmail.com</span><span class="ar">obgwew@gmail.com</span></small></span><span class="go2"><svg aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#ar"></use></svg></span></a><a class="rowd" href="FAQ.dc.html"><span class="ic"><svg aria-hidden="true" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#help"></use></svg></span><span class="rt"><b><span class="en">FAQ</span><span class="ar">الأسئلة الشائعة</span></b><small><span class="en">Quick answers</span><span class="ar">إجابات سريعة</span></small></span><span class="go2"><svg aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#ar"></use></svg></span></a><a class="rowd" href="https://obgwew.github.io/FDSB/privacy-policy.html" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#shield"></use></svg></span><span class="rt"><b><span class="en">Privacy Policy</span><span class="ar">سياسة الخصوصية</span></b><small><span class="en">How your data is handled</span><span class="ar">كيف تُعالج بياناتك</span></small></span><span class="go2"><svg aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#ar"></use></svg></span></a><a class="rowd" href="https://github.com/obgwew/FDSB/issues" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#bug"></use></svg></span><span class="rt"><b><span class="en">Report an issue</span><span class="ar">الإبلاغ عن مشكلة</span></b><small><span class="en">Bugs and ideas on GitHub</span><span class="ar">أخطاء واقتراحات على GitHub</span></small></span><span class="go2"><svg aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#ar"></use></svg></span></a></div></div></div></section>
+<div class="ft"><div class="fl2"><a href="FAQ.dc.html"><span class="en">FAQ</span><span class="ar">الأسئلة الشائعة</span></a><a href="mailto:obgwew@gmail.com"><span class="en">Support</span><span class="ar">الدعم</span></a><a href="https://obgwew.github.io/FDSB/privacy-policy.html" target="_blank" rel="noopener"><span class="en">Privacy Policy</span><span class="ar">سياسة الخصوصية</span></a><a href="https://github.com/obgwew/FDSB" target="_blank" rel="noopener">GitHub</a></div><span class="en">FDSB is open source under AGPL-3.0.</span><span class="ar">FDSB مفتوح المصدر بموجب AGPL-3.0.</span></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2900}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>
